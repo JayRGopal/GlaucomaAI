@@ -4,6 +4,9 @@ import torch
 
 
 def train_model(model, criterion, optimizer, scheduler, num_epochs=25, verbose=False):
+    # Trains the model using the specified parameters
+    # If verbose, prints updates during training, such as loss and accuracy
+    
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
