@@ -1,0 +1,7 @@
+# development dependencies
+torch>=1.9.0, <2.0.0
+numpy>=1.19.0
+matplotlib>=3.0
+os>=1.5.3
+pillow>=9.3
+torchvision>=0.10.0
