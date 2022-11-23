@@ -75,7 +75,7 @@ def glaucomaAI(data_path, csv_path, verbose=False):
     
     
     # Initialize neural network
-    net = resnext101_32x8d(pretrained=True).to(device)
+    net = torchvision.models.resnext101_32x8d(pretrained=False).to(device)
     
     # Define optimizer and learning rate scheduler
     optimizer_ft = optim.SGD(net.parameters(), lr=0.003162, momentum=0.75)
