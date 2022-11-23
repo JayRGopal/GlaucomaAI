@@ -39,6 +39,7 @@ Figure 1: Examples of images from all four categories. From right to left: norma
 The neural network architecture chosen for the task was ResNeXt101_32x8d. The most important part of its architecture is shown below. The identity shortcut connection, inspired by ResNet, allows layers to be stacked without vanishing gradients. ResNeXt also introduces a new hyperparameter called cardinality, the number of more complex transformations.
 
 ![](ResNeXt.png)
+
 Figure 2: Left: a building block of ResNet. Right: a building block of ResNeXt with cardinality 32.
 
 The network was trained for 100 epochs with a learning rate scheduler.
@@ -47,6 +48,7 @@ The network was trained for 100 epochs with a learning rate scheduler.
 The neural network achieved a validation accuracy of 98.93% across the four classes after training.
 
 ![](ConfusionMatrix.png)
+
 Figure 3: Confusion matrix for the neural network trained for 100 epochs. This matrix compares the neural network’s predictions for the validation set (a random 20% of the images) with the correct labels for each image in the set.
 
 
