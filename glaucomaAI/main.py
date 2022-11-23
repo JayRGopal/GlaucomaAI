@@ -86,5 +86,9 @@ def glaucomaAI(data_path, csv_path, verbose=False):
     net = train_model(net, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=100, verbose=verbose)
     
     return net
-    
+
+if __name__ == '__main__':
+    DATA_PATH = 'INSERT/PATH/HERE'
+    CSV_PATH = 'INSERT/PATH/HERE'
+    glaucomaAI(DATA_PATH, CSV_PATH)
     
