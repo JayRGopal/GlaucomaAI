@@ -1,5 +1,28 @@
 # GlaucomaAI
 
+## Quick Start
+
+After cloning the repo, it's as simple as downloading the data and training the model!
+
+```
+### Download all data
+python3 ./glaucomaAI/download-data.py
+```
+
+Use the CSV file provided in this repo for the labels
+```
+GlaucomaCSV.csv
+```
+
+One last step: add the filepaths to the data and labels to ```main.py```
+```
+### Change these!
+DATA_PATH = 'INSERT/PATH/HERE'
+CSV_PATH = 'INSERT/PATH/HERE'
+```
+
+Now, just run ```main.py``` and watch the model train!
+
 ## Overview
 Recent advances in computer vision have enabled accurate diagnosis of glaucoma, the leading cause of worldwide irreversible blindness, but few studies have diagnosed it at multiple stages of progression. We present a convolutional neural network (CNN) that distinguishes between four different clinical diagnosis categories—normal, low-risk suspect, high-risk suspect and glaucoma—with high accuracy. We also make publicly available a dataset of 711 images from the Rand Eye Institute.
 
