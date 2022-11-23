@@ -38,10 +38,7 @@ def read_ims(directory, imsz):
         im = Image.open(filename)
         im = np.array(im.resize((imsz, imsz)))
 
-
         imgs[im_num, :, :, :] = im
-
-
 
         im_num += 1
     os.chdir(directory)
