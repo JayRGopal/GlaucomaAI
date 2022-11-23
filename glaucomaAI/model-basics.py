@@ -1,6 +1,6 @@
 
 import time
-
+import torch
 
 
 def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
