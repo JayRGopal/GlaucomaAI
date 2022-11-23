@@ -74,12 +74,6 @@ def glaucomaAI(data_path, csv_path, verbose=False):
     }
     
     
-    # Define data loader
-    image_datasets = {x: torch.utils.data.TensorDataset(torch.tensor(Data[x], dtype=torch.float).transpose(3,1),torch.tensor(Labels[x], dtype=torch.float)) for x in ['train', 'val']}
-    dataloaders    = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=4, shuffle=True, num_workers=4) for x in ['train', 'val']}
-    dataset_sizes  = {x: len(image_datasets[x]) for x in ['train', 'val']}
-    
-    
     # Initialize neural network
     net = resnext101_32x8d(pretrained=True).to(device)
     
@@ -89,7 +83,7 @@ def glaucomaAI(data_path, csv_path, verbose=False):
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.9)
     
     # Train the neural network!
-    net = train_model(net, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=100)
+    net = train_model(net, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=100, verbose=verbose)
     
     return net
     

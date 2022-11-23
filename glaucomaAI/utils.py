@@ -6,6 +6,7 @@ from PIL import Image
 
 
 def plot(x):
+    # Plots an image
     fig, ax = plt.subplots()
     im = ax.imshow(x)
     ax.axis('off')
@@ -15,7 +16,7 @@ def plot(x):
     
 
 def read_ims(directory, imsz):
-
+    # Reads images from a given directory, and returns them as a numpy array
 
     main_dir = os.getcwd()
     os.chdir(directory)
