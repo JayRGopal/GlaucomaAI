@@ -4,25 +4,28 @@ import numpy as np
 import csv
 import torch
 from numpy.random import randint
+import torch.optim as optim
+from torch.optim import lr_scheduler
+import torchvision
+from torchvision import datasets, transforms
 
 
-def glaucomaAI(path):
+def glaucomaAI(data_path, csv_path):
+    # 
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+    
     imsz = 227
-
-    X = read_ims(path, imsz)
-
-X = X /255
-
-Y = np.zeros((X.shape[0],4))
+    X = read_ims(data_path, imsz)
+    X = X / 255
+    Y = np.zeros((X.shape[0],4))
 
 
 index = 0  
 
 ##Insert location of the CSV file below.
 
-with open('/content/drive/My Drive/OpticsAI/GlaucomaRetinalData/GlaucomaDataSuspectCSV.csv') as csv_file:
+with open(csv_path) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     for row in csv_reader:
